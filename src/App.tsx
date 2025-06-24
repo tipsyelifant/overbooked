@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
-import GameLayout from './components/GameLayout';
-import ProgressTracker from './components/ProgressTracker';
-import NavigationControls from './components/NavigationControls';
-import PuzzleContainer from './components/PuzzleContainer';
-import DialogueBox from './components/DialogueBox';
-import { useKitchenState } from './hooks/useKitchenState';
-import { initialGameState } from './types/gameTypes'; // For resetting
+import GameLayout from '@/components/GameLayout';
+import ProgressTracker from '@/components/ProgressTracker';
+import NavigationControls from '@/components/NavigationControls';
+import PuzzleContainer from '@/components/PuzzleContainer';
+import DialogueBox from '@/components/DialogueBox';
+import { useKitchenState } from '@/hooks/useKitchenState';
+import { initialGameState } from '@/types/gameTypes'; // For resetting
 
 const IntroductionContent: React.FC = () => (
   <div>
