@@ -4,7 +4,7 @@ import GameLayout from './components/GameLayout';
 import ProgressTracker from './components/ProgressTracker';
 import NavigationControls from './components/NavigationControls';
 import PuzzleContainer from './components/PuzzleContainer';
-import CharacterDialogue from './components/CharacterDialogue';
+import DialogueBox from './components/DialogueBox';
 import { useKitchenState } from './hooks/useKitchenState';
 import { initialGameState } from './types/gameTypes'; // For resetting
 
@@ -16,7 +16,7 @@ const IntroductionContent: React.FC = () => (
       but the kitchen is pure chaos! Processes are slow, everyone's stressed, and orders are getting mixed up. 
       Malik, the head chef, needs your help to apply Lean Methodology and turn things around.
     </p>
-    <CharacterDialogue 
+    <DialogueBox 
       character="Malik" 
       message="Welcome, new recruit! Ready to whip this kitchen into shape? Our first task is to see what we're dealing with. Let's do a Gemba Walk!" 
     />
@@ -61,7 +61,7 @@ const PuzzleContent: React.FC<{ puzzleId: number }> = ({ puzzleId }) => {
 const ConclusionContent: React.FC<{ efficiency: number, time: number, satisfaction: number }> = ({ efficiency, time, satisfaction }) => (
   <div>
     <h2 className="text-xl font-semibold mb-2 text-overbooked-green">Restaurant is OVERBOOKED!</h2>
-    <CharacterDialogue 
+    <DialogueBox 
       character="Heidi" 
       message={`We did it! From ${initialGameState.kitchenEfficiency} processes taking ${initialGameState.serviceTime} minutes, we're now down to ${efficiency} processes and just ${time} minutes per order! Customer satisfaction is ${satisfaction}%!`} 
       emotion="happy"
@@ -146,7 +146,7 @@ function App() {
 
       {gameState.dialogueState && !loading && (
          <div className="my-4">
-            <CharacterDialogue 
+            <DialogueBox 
               character={gameState.dialogueState.character} 
               message={gameState.dialogueState.line}
             />
