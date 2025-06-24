@@ -1,0 +1,7 @@
+# Netlify Redirects
+
+# Redirect any 404s to the homepage
+/*    /index.html    404
+
+# Example for SPA if we were using client-side routing (not currently the case)
+# /*    /index.html    200
